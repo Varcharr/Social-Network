@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+<br>
+<h1>All USERS</h1>
+
+
+
+<div class="ui container">
+
+<div class="ui stackable four column grid">
+<% users.forEach((user)=>{ %>
+    <div class=" column">
+      <div class="ui card">
+        <div class="image">
+          <img src="images/<%= user.gender %>.gif">
+        </div>
+          <div class="content">
+            <a class="header" href="users/<%= user.id %>"><%= user.firstName %> <%= user.surname %> </a>
+            <div class="meta">
+              <span class="date">Age: <%= user.age %></span>
+            </div>
+            <div class="description">
+              Gender: <%= user.gender %>
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="user icon"></i>
+              Friends: <%= user.friends.length %>
+            </a>
+        </div>
+      </div>
+    </div>
+
+<% }) %>
+</div>
+</div>
+
+
+
+<% include ../partials/footer %>
